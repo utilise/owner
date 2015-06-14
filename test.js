@@ -1,19 +1,16 @@
 var expect = require('chai').expect
-  , mock = require('mockery')
+  , client = require('client')
+  , owner  = require('./')
 
 describe('owner', function() {
 
-  it('should default to global for node', function(){
-    expect(require('./')).to.be.equal(global)
+  !client && it('should default to global for node', function(){
+    expect(owner).to.be.equal(global)
   })
 
-  it('should default to window for client', function(){
-    global.window = {}
-    mock.enable()
-    mock.registerMock('client', true)
-    delete require.cache[require.resolve('client')]
-    delete require.cache[require.resolve('./')]
-    expect(require('./')).to.be.equal(window)
+  /* istanbul ignore next */
+  client && it('should default to window for client', function(){
+    expect(owner).to.be.equal(window)
   })
 
 })

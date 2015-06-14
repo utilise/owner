@@ -1,1 +1,1 @@
-module.exports = require('client') ? window : global
+module.exports = require('client') ? /* istanbul ignore next */ window : global
