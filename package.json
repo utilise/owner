@@ -1,5 +1,5 @@
 {
-  "name": "owner",
+  "name": "utilise.owner",
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,6 @@
     "mockery": "^1.4.0"
   },
   "dependencies": {
-    "client": "git+https://github.com/utilise/client.git"
+    "utilise.client": "*"
   }
 }
